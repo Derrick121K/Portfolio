@@ -432,6 +432,27 @@ document.addEventListener('keydown', (e) => {
 });
 
 // CV Download Modal Functions
+/** Canonical live portfolio (GitHub Pages project site — origin alone omits /Portfolio/). */
+const PUBLIC_PORTFOLIO_SITE_URL = 'https://derrick121k.github.io/Portfolio/';
+
+function getPortfolioSiteUrlForCV() {
+    return PUBLIC_PORTFOLIO_SITE_URL;
+}
+
+function formatCvEmailsLine(d) {
+    const list = d.emails && d.emails.length ? d.emails : [d.email];
+    return list.join(' · ');
+}
+
+function formatCvPhonesLine(d) {
+    const list = d.phones && d.phones.length ? d.phones : [d.phone];
+    return list.join(' · ');
+}
+
+function formatCvAddress(d) {
+    return d.fullAddress || d.location;
+}
+
 let currentCVStyle = 'modern';
 
 function selectCVStyle(style, element) {
@@ -482,9 +503,7 @@ function downloadCVasPDF(style) {
     const pageHeight = doc.internal.pageSize.getHeight();
 
     const socialLinks = getSocialLinksFromPage();
-    const websiteUrl = window.location.origin && window.location.origin !== 'null'
-        ? window.location.origin
-        : (window.location.href || '');
+    const websiteUrl = getPortfolioSiteUrlForCV();
 
     const cvData = getCVDataForPDF(style, { websiteUrl, socialLinks });
 
@@ -735,9 +754,16 @@ function renderModernPDF(doc, d, pageWidth, pageHeight) {
 
     doc.setTextColor(30, 41, 59);
     doc.setFontSize(10.5);
-    doc.text(`Email: ${d.email}`, marginX, y); y += 14;
-    doc.text(`Phone: ${d.phone}`, marginX, y); y += 14;
-    doc.text(`Location: ${d.location}`, marginX, y); y += 20;
+    const contentW = pageWidth - marginX * 2;
+    let block = doc.splitTextToSize(`Email: ${formatCvEmailsLine(d)}`, contentW);
+    doc.text(block, marginX, y);
+    y += block.length * 14;
+    block = doc.splitTextToSize(`Phone: ${formatCvPhonesLine(d)}`, contentW);
+    doc.text(block, marginX, y);
+    y += block.length * 14;
+    block = doc.splitTextToSize(`Location: ${formatCvAddress(d)}`, contentW);
+    doc.text(block, marginX, y);
+    y += block.length * 14 + 6;
 
     renderStandardResumeBody(doc, d, pageWidth, pageHeight, y, theme);
 }
@@ -790,8 +816,16 @@ function renderClassicPDF(doc, d, pageWidth, pageHeight) {
     doc.setTextColor(75, 85, 99);
     doc.text(d.titleLine, marginX, y);
     y += 12;
-    doc.text(`${d.email} | ${d.phone} | ${d.location}`, marginX, y);
-    y += 10;
+    const cwClassic = pageWidth - marginX * 2;
+    let clines = doc.splitTextToSize(formatCvEmailsLine(d), cwClassic);
+    doc.text(clines, marginX, y);
+    y += clines.length * 12;
+    clines = doc.splitTextToSize(formatCvPhonesLine(d), cwClassic);
+    doc.text(clines, marginX, y);
+    y += clines.length * 12;
+    clines = doc.splitTextToSize(formatCvAddress(d), cwClassic);
+    doc.text(clines, marginX, y);
+    y += clines.length * 12 + 4;
 
     doc.setDrawColor(156, 163, 175);
     doc.setLineWidth(0.8);
@@ -861,9 +895,16 @@ function renderCreativePDF(doc, d, pageWidth, pageHeight) {
 
     doc.setFontSize(10.5);
     doc.setTextColor(31, 41, 55);
-    doc.text(d.email, marginX, y); y += 13;
-    doc.text(d.phone, marginX, y); y += 13;
-    doc.text(d.location, marginX, y); y += 18;
+    const cwCre = pageWidth - marginX * 2;
+    let cr = doc.splitTextToSize(formatCvEmailsLine(d), cwCre);
+    doc.text(cr, marginX, y);
+    y += cr.length * 13;
+    cr = doc.splitTextToSize(formatCvPhonesLine(d), cwCre);
+    doc.text(cr, marginX, y);
+    y += cr.length * 13;
+    cr = doc.splitTextToSize(formatCvAddress(d), cwCre);
+    doc.text(cr, marginX, y);
+    y += cr.length * 13 + 5;
 
     doc.setDrawColor(236, 72, 153);
     doc.setLineWidth(0.9);
@@ -889,8 +930,11 @@ function getCVDataForPDF(style, { websiteUrl, socialLinks }) {
         name: "Derrick Aaron Mohale Kapa",
         titleLine: "Software Developer | Mobile & Web Developer",
         email: "mohalekapa112@gmail.com",
+        emails: ["mohalekapa112@gmail.com", "derkdev976@gmail.com"],
         phone: "+27 71 654 7121",
+        phones: ["+27 78 003 4536", "+27 71 654 7121", "+27 84 038 9606"],
         location: "Witbank, Mpumalanga, SA",
+        fullAddress: "103 Van Den heever St, Klipfontein ext8, Witbank 1035",
         websiteUrl,
         socialLinks,
         summary: "Software Development student at IIE Rosebank College with strong skills in mobile and web development. Passionate about building innovative digital solutions with React Native, Kotlin, and modern web technologies.",
@@ -943,16 +987,17 @@ document.addEventListener('keydown', (e) => {
 // CV HTML Generator Functions
 function getCVHTML(style) {
     const socialLinks = getSocialLinksFromPage();
-    const websiteUrl = window.location.origin && window.location.origin !== 'null'
-        ? window.location.origin
-        : (window.location.href || '');
+    const websiteUrl = getPortfolioSiteUrlForCV();
 
     const cvData = {
         name: "Derrick Aaron Mohale Kapa",
         title: "Software Developer",
         email: "mohalekapa112@gmail.com",
+        emails: ["mohalekapa112@gmail.com", "derkdev976@gmail.com"],
         phone: "+27 71 654 7121",
+        phones: ["+27 78 003 4536", "+27 71 654 7121", "+27 84 038 9606"],
         location: "Witbank, Mpumalanga, SA",
+        fullAddress: "103 Van Den heever St, Klipfontein ext8, Witbank 1035",
         websiteUrl,
         socialLinks,
         summary: "Software Development student at IIE Rosebank College with strong skills in mobile and web development. Passionate about building innovative digital solutions with React Native, Kotlin, and modern web technologies.",
@@ -1038,10 +1083,10 @@ function getModernCV(d) {
     <div class="header">
         <h1>${d.name}</h1>
         <div class="title">Software Developer | Mobile & Web Developer</div>
-        <div class="contact-row">
-            <span>✉ ${d.email}</span>
-            <span>📱 ${d.phone}</span>
-            <span>📍 ${d.location}</span>
+        <div class="contact-row" style="flex-direction: column; align-items: center; gap: 6px;">
+            <span>✉ ${(d.emails || [d.email]).join(' · ')}</span>
+            <span>📱 ${(d.phones || [d.phone]).join(' · ')}</span>
+            <span>📍 ${d.fullAddress || d.location}</span>
         </div>
         <div class="links">
             ${d.websiteUrl ? `<a href="${d.websiteUrl}" target="_blank" rel="noopener noreferrer">Website</a>` : ''}
@@ -1134,9 +1179,9 @@ function getClassicCV(d) {
         <h1>${d.name}</h1>
         <div class="title">${d.title}</div>
         <div class="contact-info">
-            <span>${d.email}</span>
-            <span>${d.phone}</span>
-            <span>${d.location}</span>
+            ${(d.emails || [d.email]).map((e) => `<span>${e}</span>`).join('')}
+            ${(d.phones || [d.phone]).map((p) => `<span>${p}</span>`).join('')}
+            <span>${d.fullAddress || d.location}</span>
         </div>
         <div class="links">
             ${d.websiteUrl ? `<a href="${d.websiteUrl}" target="_blank" rel="noopener noreferrer">Website</a>` : ''}
@@ -1228,9 +1273,9 @@ function getCreativeCV(d) {
                 <h1>${d.name}</h1>
                 <div class="title">${d.title}</div>
                 <div class="contact-row">
-                    <span>${d.email}</span>
-                    <span>${d.phone}</span>
-                    <span>${d.location}</span>
+                    ${(d.emails || [d.email]).map((e) => `<span>${e}</span>`).join('')}
+                    ${(d.phones || [d.phone]).map((p) => `<span>${p}</span>`).join('')}
+                    <span>${d.fullAddress || d.location}</span>
                 </div>
                 <div class="links">
                     ${d.websiteUrl ? `<a href="${d.websiteUrl}" target="_blank" rel="noopener noreferrer">Website</a>` : ''}
