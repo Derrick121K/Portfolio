@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://derrick121k.github.io/portfolio/sitemap.xml
+Sitemap: https://derrick121k.github.io/Portfolio/sitemap.xml
