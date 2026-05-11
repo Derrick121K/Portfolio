@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Derrick Aaron Mohale Kapa · Developer Portfolio</title>
+    <meta name="description" content="Software development student (mobile & web). Open to internships, junior roles, and freelance. Next.js, React Native, Kotlin — Witbank / Pretoria, South Africa.">
+    <meta name="theme-color" content="#0B0F1A">
+    
+    <link rel="canonical" href="https://derrick121k.github.io/portfolio/">
+    <meta property="og:site_name" content="Derrick Aaron Mohale Kapa">
+    <meta property="og:title" content="Derrick Aaron Mohale Kapa · Developer Portfolio">
+    <meta property="og:description" content="Software development student (mobile & web). Open to internships, junior roles, and freelance. Witbank / Pretoria, South Africa.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://derrick121k.github.io/portfolio/">
+    <meta property="og:image" content="https://derrick121k.github.io/portfolio/assets/me.jpg">
+    <meta property="og:image:alt" content="Derrick Aaron Mohale Kapa">
+    <meta property="og:locale" content="en_ZA">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Derrick Aaron Mohale Kapa · Developer Portfolio">
+    <meta name="twitter:description" content="Software development student (mobile & web). Open to internships, junior roles, and freelance.">
+    <meta name="twitter:image" content="https://derrick121k.github.io/portfolio/assets/me.jpg">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="assets/me.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Derrick Aaron Mohale Kapa",
+      "url": "https://derrick121k.github.io/portfolio/",
+      "image": "https://derrick121k.github.io/portfolio/assets/me.jpg",
+      "jobTitle": "Software Development Student",
+      "email": "mailto:mohalekapa112@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Witbank",
+        "addressCountry": "ZA"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/derrick-kapa-69bb1a195",
+        "https://github.com/Derrick121K",
+        "https://wa.me/27716547121",
+        "https://www.facebook.com/mohale.kapa.106"
+      ]
+    }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">Derrick <span>Kapa</span></div>
+            <div class="mobile-menu">☰</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#work-with-me">Collaborate</a></li>
+                <li><a href="#notes">Notes</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-vfx" aria-hidden="true"></div>
+        <div class="hero-planets" aria-hidden="true">
+            <span class="planet planet--earthlike"></span>
+            <span class="planet planet--saturn"></span>
+            <span class="planet planet--mars"></span>
+        </div>
+        <div class="hero-code-bg">
+const developer = {
+  name: "Derrick Kapa",
+  role: "Mobile & Web Developer",
+  skills: ["React Native", "Kotlin", "HTML", "CSS", "JavaScript"],
+  passion: "Building useful, polished apps",
+  location: "Based Witbank · studying Pretoria, ZA"
+};
+
+function createAmazingApps() {
+  return developer.passion + " + clean code";
+}
+
+class SoftwareEngineer {
+  constructor() {
+    this.learning = true;
+    this.passion = "unlimited";
+  }
+}
+
+// Ship ideas, learn fast, iterate.
+console.log("Let's build something amazing!");</div>
+        <div class="hero-content">
+            <h1>Derrick Aaron Mohale Kapa</h1>
+            <p class="subtitle"><span class="typing-effect">Software Development Student · Mobile & Web</span></p>
+            <p class="hero-tagline">Open to <strong>internships</strong>, <strong>junior developer roles</strong>, and <strong>freelance</strong> web &amp; mobile work.</p>
+            <p class="location">IIE Rosebank College · Pretoria (campus)<br>Witbank · Diploma (2nd year) · Higher Certificate in Mobile &amp; Web Development (2024)</p>
+            <p class="hero-availability"><i class="far fa-clock" aria-hidden="true"></i> I aim to reply within a few days · Brief portfolio &amp; CV below</p>
+            <img src="assets/me.jpg" alt="Derrick Kapa" class="profile-img" width="300" height="300" loading="eager" decoding="async">
+            <div class="hero-btns">
+                <a href="#projects" class="btn">View My Work</a>
+                <a href="#work-with-me" class="btn btn-secondary">Hire &amp; collaborate</a>
+                <button type="button" class="btn btn-download-cv" id="openCvModalBtn"><i class="fas fa-file-download"></i> Download CV</button>
+            </div>
+            <div class="scroll-indicator">
+                <a href="#about"><i class="fas fa-chevron-down"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About <span>Me</span></h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <img src="assets/profile.png" alt="Derrick Kapa" class="profile-img" width="300" height="300" loading="lazy" decoding="async">
+                    <p>I am a <strong>2nd year student</strong> pursuing a <strong>Diploma in Software Development</strong> at <strong>IIE Rosebank College</strong>. I'm passionate about building mobile and web applications.</p>
+                    <p>I'm looking for <strong>internships</strong>, <strong>entry-level and junior developer</strong> opportunities, and <strong>paid freelance</strong> work (e.g. small business sites, landing pages, and React Native or Next.js apps). If you have a clear goal and timeline, I work in a structured, communicative way from first message to handover.</p>
+                    <p>My technical stack includes <strong>React Native</strong>, <strong>Kotlin</strong>, <strong>HTML/CSS/JavaScript</strong>, and <strong>SQL</strong>. I'm continuously learning new technologies through my coursework and personal projects.</p>
+                    <p>I also hold certifications in <strong>Cyber Security</strong> and <strong>Security Grade E-C</strong>, along with a valid <strong>Code 14 Driver's License</strong> for professional flexibility.</p>
+                    <a href="#contact" class="btn">Let's Connect</a>
+                </div>
+                <div class="about-image"> 
+                    <!-- Code Terminal Showcase -->
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <span class="terminal-btn red"></span>
+                            <span class="terminal-btn yellow"></span>
+                            <span class="terminal-btn green"></span>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="terminal-line">
+                                <span class="terminal-prompt">$</span>
+                                <span class="terminal-command"> node --version</span>
+                            </div>
+                            <div class="terminal-output">v18.17.0</div>
+                            <div class="terminal-line">
+                                <span class="terminal-prompt">$</span>
+                                <span class="terminal-command"> java --version</span>
+                            </div>
+                            <div class="terminal-output">openjdk 17.0.1</div>
+                            <div class="terminal-line">
+                                <span class="terminal-prompt">$</span>
+                                <span class="terminal-command"> whoami</span>
+                            </div>
+                            <div class="terminal-output">derrick-kapa</div>
+                            <div class="terminal-line">
+                                <span class="terminal-prompt">$</span>
+                                <span class="terminal-command"> cat skills.json</span>
+                            </div>
+                            <div class="terminal-output">["React Native", "Next.js", "Kotlin", "Java", "TypeScript", "C#", "HTML", "CSS", "JavaScript", "Supabase"]</div>
+                            <div class="terminal-line">
+                                <span class="terminal-prompt">$</span>
+                                <span class="terminal-command"> cat education.txt</span>
+                            </div>
+                            <div class="terminal-output">IIE Rosebank College - 2nd Year Diploma in Software Development</div>
+                            <div class="terminal-line">
+                                <span class="terminal-prompt">$</span>
+                                <span class="terminal-command" style="animation: blink 1s infinite;">echo "Ready to build!"</span>
+                            </div>
+                            <div class="terminal-output">Ready to build!</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section-bg">
+        <div class="container">
+            <h2 class="section-title">Technical <span>Skills</span></h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> Languages</h3>
+                    <ul class="skill-list">
+                        <li>TypeScript <span class="skill-level">Intermediate</span></li>
+                        <li>JavaScript (ES6+) <span class="skill-level">Intermediate</span></li>
+                        <li>Java <span class="skill-level">Intermediate</span></li>
+                        <li>C# <span class="skill-level">Basic</span></li>
+                        <li>Kotlin <span class="skill-level">Intermediate</span></li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-laptop-code"></i> Frontend & Mobile</h3>
+                    <ul class="skill-list">
+                        <li>Next.js <span class="skill-level">Basic</span></li>
+                        <li>React Native <span class="skill-level">Intermediate</span></li>
+                        <li>HTML5 <span class="skill-level">Advanced</span></li>
+                        <li>CSS3 <span class="skill-level">Advanced</span></li>
+                        <li>Android Studio <span class="skill-level">Intermediate</span></li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-database"></i> Backend & Database</h3>
+                    <ul class="skill-list">
+                        <li>Supabase <span class="skill-level">Basic</span></li>
+                        <li>MongoDB <span class="skill-level">Basic</span></li>
+                        <li>SQL <span class="skill-level">Basic</span></li>
+                        <li>REST APIs <span class="skill-level">Basic</span></li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-tools"></i> Tools & Other</h3>
+                    <ul class="skill-list">
+                        <li>Git & GitHub <span class="skill-level">Intermediate</span></li>
+                        <li>VS Code <span class="skill-level">Advanced</span></li>
+                        <li>Cyber Security <span class="skill-level">Certified</span></li>
+                        <li>Code 14 License <span class="skill-level">Valid</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">My <span>Projects</span></h2>
+            <div class="projects-container">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-image">
+                       <img src="assets/project-library.png" alt="Library WebApp Screenshot" width="800" height="450" loading="lazy" decoding="async">
+                        <div class="project-overlay">
+                            <i class="fas fa-book"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Library Web-App</h3>
+                        <p><strong>Full-stack web app.</strong> Library management with Next.js, PostgreSQL, and Prisma: authentication (email, phone, admin roles), searchable catalog, and admin workflows. Demonstrates end-to-end ownership from database design to deployed UI.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Next.js</span>
+                            <span class="project-tag">PostgreSQL</span>
+                            <span class="project-tag">Prisma</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://davel-library.onrender.com/" target="_blank" rel="noopener noreferrer" class="btn btn-small"><i class="fas fa-external-link-alt"></i> Go Live </a>
+                            <a href="https://github.com/derkdev976-web/davel-library" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-small"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- GossipOffice -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/project-gossipoffice.png" alt="GossipOffice CV builder and office tools web app" width="800" height="450" loading="lazy" decoding="async">
+                        <div class="project-overlay">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>GossipOffice</h3>
+                        <p><strong>Web app · local-first.</strong> AI-assisted office suite built with Next.js: résumé &amp; cover-letter builder with live preview, templates, PDF/DOCX/PPTX exports, and an Office-style workspace for notes and documents — with optional Groq-powered suggestions.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Next.js</span>
+                            <span class="project-tag">TypeScript</span>
+                            <span class="project-tag">Tailwind · shadcn/ui</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://go-office.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-small"><i class="fas fa-external-link-alt"></i> Go Live</a>
+                            <a href="https://github.com/Derrick121K/GossipOffice" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-small"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/project-gossipa.png" alt="Gossipa social app screenshot" width="800" height="450" loading="lazy" decoding="async" />
+                        <div class="project-overlay">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Social Media App (Gossipa)</h3>
+                        <p><strong>Cross-platform (iOS &amp; Android).</strong> React Native app with home, explore, feed, chat, and settings, backed by Supabase. Code is in a private repo; happy to share access or a walkthrough for serious employers or clients.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">React Native</span>
+                            <span class="project-tag">Android</span>
+                            <span class="project-tag">Supabase</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://expo.dev/accounts/derrick112/projects/gossipa" target="_blank" rel="noopener noreferrer" class="btn btn-small"><i class="fas fa-external-link-alt"></i> Expo project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/siy.png" alt="Gossipa social app screenshot" width="800" height="450" loading="lazy" decoding="async" />
+                        <div class="project-overlay">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>SiyasShots-WebSite</h3>
+                        <p><strong>Website.</strong> A simple yet elegant website for showcasing photos and providing camera services.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">HTML</span>
+                            <span class="project-tag">CSS</span>
+                            <span class="project-tag">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://derrick121k.github.io/SiyasShots/" target="_blank" rel="noopener noreferrer" class="btn btn-small"><i class="fas fa-external-link-alt"></i> Go Live </a>
+                            <a href="https://github.com/Derrick121K/SiyasShots" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-small"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Project 4 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/project-weather.png" alt="Weather API App screenshot" width="800" height="450" loading="lazy" decoding="async">
+                        <div class="project-overlay">
+                            <i class="fas fa-cloud-sun"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Weather Forecast App</h3>
+                        <p><strong>Mobile app &amp; APIs.</strong> React Native app using OpenWeatherMap: location-based forecasts, multi-day outlook, and a polished UI — shows integration with REST APIs and device location.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">React Native</span>
+                            <span class="project-tag">REST API</span>
+                            <span class="project-tag">GeoLocation</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://expo.dev/accounts/derrick112/projects/WeatherNewsApp" target="_blank" rel="noopener noreferrer" class="btn btn-small"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="https://github.com/Derrick121K/WeatherNewsApp" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-small"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- History App (Android / Kotlin) -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/project-history-app.png" alt="History App Android screenshot" width="800" height="450" loading="lazy" decoding="async">
+                        <div class="project-overlay">
+                            <i class="fas fa-landmark"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>History App</h3>
+                        <p><strong>Android · Kotlin.</strong> Enter your age and see how it lines up with a historical figure from a curated set of ~10 names. Ages over 96 show a validation message so you can try again. Simple two-button flow: process and clear.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Kotlin</span>
+                            <span class="project-tag">Android</span>
+                        </div>
+                        <div class="project-links">
+                            <span class="project-unpublished">Unpublished</span>
+                            <a href="https://github.com/Derrick121K/History-App1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-small"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cybersecurity Chatbot (C# console) -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/project-cybersecurity-chatbot.png" alt="Cybersecurity Chatbot console app" width="800" height="450" loading="lazy" decoding="async">
+                        <div class="project-overlay">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Cybersecurity Chatbot</h3>
+                        <p><strong>C# · console.</strong> Educational chatbot for security awareness: voice greeting, ASCII-style UI, personalized prompts, curated cybersecurity tips, and input validation. Built to run from Visual Studio (build &amp; run).</p>
+                        <div class="project-tags">
+                            <span class="project-tag">C#</span>
+                            <span class="project-tag">.NET</span>
+                            <span class="project-tag">Console</span>
+                        </div>
+                        <div class="project-links">
+                            <span class="project-unpublished">Unpublished</span>
+                            <a href="https://github.com/Derrick121K/CybersecurityChatbot" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-small"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- chalk-markit (vanilla web) -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/project-chalk-markit.png" alt="Chalk Markit web app" width="800" height="450" loading="lazy" decoding="async">
+                        <div class="project-overlay">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Chalk Markit</h3>
+                        <p><strong>Front-end web app.</strong> Multi-page experience built with HTML, CSS, and JavaScript: landing flow plus login, signup, dashboard, and profile views, with dedicated scripts for auth and each screen.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">HTML</span>
+                            <span class="project-tag">CSS</span>
+                            <span class="project-tag">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <span class="project-unpublished">Unpublished</span>
+                            <a href="https://github.com/Derrick121K/chalk-markit" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-small"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Animalcore (GitHub Pages) -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/project-animalcore.png" alt="Animalcore web project screenshot" width="800" height="450" loading="lazy" decoding="async">
+                        <div class="project-overlay">
+                            <i class="fas fa-paw"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Animalcore</h3>
+                        <p><strong>Web · GitHub Pages.</strong> Front-end project deployed to GitHub Pages — explore the live build, then dive into the source on GitHub for structure, styling, and behavior.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">HTML</span>
+                            <span class="project-tag">CSS</span>
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">GitHub Pages</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://derrick121k.github.io/animalcore/" target="_blank" rel="noopener noreferrer" class="btn btn-small"><i class="fas fa-external-link-alt"></i> Go Live</a>
+                            <a href="https://github.com/Derrick121K/animalcore" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-small"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- fam — Family Game Night -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/project-fam.png" alt="Family Game Night web app screenshot" width="800" height="450" loading="lazy" decoding="async">
+                        <div class="project-overlay">
+                            <i class="fas fa-dice"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Family Game Night</h3>
+                        <p><strong>Web app · GitHub Pages.</strong> In-browser game night flow: a host area to upload questions, join flow for players, a shared questions view, and scores — built with HTML, CSS, and JavaScript; the repo includes scripts and optional Node tooling for local runs.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">HTML</span>
+                            <span class="project-tag">CSS</span>
+                            <span class="project-tag">GitHub Pages</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://derrick121k.github.io/fam/" target="_blank" rel="noopener noreferrer" class="btn btn-small"><i class="fas fa-external-link-alt"></i> Go Live</a>
+                            <a href="https://github.com/Derrick121K/fam" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-small"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- REACH Foundation — WEDE5020 Website POE -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/project-reach-foundation.png" alt="REACH Foundation website screenshot" width="800" height="450" loading="lazy" decoding="async">
+                        <div class="project-overlay">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>REACH Foundation</h3>
+                        <p><strong>Multi-page site · GitHub Pages.</strong> Academic web POE for a community nonprofit concept: hero and CTAs, project highlights (education, health, sustainability), donation flow, about and contact, join/login/sign-up and profile-style pages — built with HTML, CSS, and JavaScript.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">HTML</span>
+                            <span class="project-tag">CSS</span>
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">GitHub Pages</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://derrick121k.github.io/WEDE5020-WebsitePOE/" target="_blank" rel="noopener noreferrer" class="btn btn-small"><i class="fas fa-external-link-alt"></i> Go Live</a>
+                            <a href="https://github.com/Derrick121K/WEDE5020-WebsitePOE" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-small"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Experience & <span>Education</span></h2>
+            <div class="timeline">
+                <!-- Education - Current -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3><i class="fas fa-graduation-cap"></i> Diploma in Software Development</h3>
+                        <span class="timeline-date">2025 - Present (2nd Year)</span>
+                        <p>IIE Rosebank College</p>
+                    </div>
+                </div>
+
+                <!-- Previous Education -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3><i class="fas fa-certificate"></i> Higher Certificate: Mobile &amp; Web Development</h3>
+                        <span class="timeline-date">2024</span>
+                        <p>IIE Rosebank College - Completed</p>
+                    </div>
+                </div>
+
+                <!-- High School -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3><i class="fas fa-school"></i> Grade 12</h3>
+                        <span class="timeline-date">2018</span>
+                        <p>Kwadela Secondary School - Davel, Mpumalanga</p>
+                    </div>
+                </div>
+
+                <!-- Certification -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3><i class="fas fa-shield-alt"></i> Security Grade E-C</h3>
+                        <span class="timeline-date">2024</span>
+                        <p>Fakuse Family Security and Training - Ermelo</p>
+                    </div>
+                </div>
+
+                <!-- Work Experience -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3><i class="fas fa-truck"></i> Driver Code 14</h3>
+                        <span class="timeline-date">2024 - Present</span>
+                        <p>Omplishs 16.4 Bell Transport - Witbank</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work with me: intern / job / freelance -->
+    <section id="work-with-me">
+        <div class="container">
+            <h2 class="section-title">Work <span>With Me</span></h2>
+            <p class="work-with-intro">Three ways we can connect. Same quality bar — different timelines and expectations.</p>
+            <div class="work-with-grid">
+                <div class="work-with-card fade-in">
+                    <div class="work-with-icon"><i class="fas fa-user-graduate"></i></div>
+                    <h3>Internships</h3>
+                    <p>Structured learning under mentorship. I’m reliable, teachable, and used to deadlines from coursework. Share your programme dates and stack — I’ll tailor my CV and examples.</p>
+                </div>
+                <div class="work-with-card fade-in">
+                    <div class="work-with-icon"><i class="fas fa-briefcase"></i></div>
+                    <h3>Junior / full-time</h3>
+                    <p>Mobile (React Native) and web (Next.js, HTML/CSS/JS) are my strongest lanes. I document what I build and learn fast on the job. Happy to complete a small take-home or pairing session.</p>
+                </div>
+                <div class="work-with-card fade-in">
+                    <div class="work-with-icon"><i class="fas fa-handshake"></i></div>
+                    <h3>Freelance</h3>
+                    <p>Paid project work: landing pages, small business sites, fixes and features on existing apps. I’m transparent about student bandwidth — we agree scope and milestones up front.</p>
+                </div>
+            </div>
+            <p class="work-with-cta"><a href="#contact" class="btn">Start a conversation</a></p>
+        </div>
+    </section>
+
+    <!-- Notes (single curated piece — no placeholder blog) -->
+    <section id="notes" class="section-bg">
+        <div class="container">
+            <h2 class="section-title">Notes <span>&amp; How I Work</span></h2>
+            <div class="blog-container notes-single">
+                <article class="blog-card fade-in notes-feature">
+                    <div class="blog-image notes-feature-media">
+                        <div class="notes-video-stage" id="notesVideoStage">
+                            <div class="notes-video-glow" aria-hidden="true"></div>
+                            <div class="notes-video-inner">
+                                <video
+                                    id="notesWorkVideo"
+                                    class="notes-how-i-work-video"
+                                    src="assets/notes-how-i-work.mp4"
+                                    poster="assets/me.jpg"
+                                    controls
+                                    playsinline
+                                    preload="metadata"
+                                    muted
+                                    width="600"
+                                    height="338"
+                                    aria-label="How I work with recruiters and clients"
+                                >
+                                    Your browser does not support embedded video.
+                                </video>
+                                <div class="notes-video-overlay" id="notesVideoOverlay">
+                                    <button type="button" class="notes-video-play" id="notesVideoPlayBtn" aria-label="Play introduction video with sound">
+                                        <span class="notes-video-play-ring" aria-hidden="true"></span>
+                                        <span class="notes-video-play-icon"><i class="fas fa-play"></i></span>
+                                    </button>
+                                    <p class="notes-video-hint">Scrolls into view: plays muted automatically. Tap play for sound.</p>
+                                </div>
+                                <div class="notes-video-toolbar" role="toolbar" aria-label="Video options">
+                                    <button type="button" class="notes-video-tool" id="notesVideoMuteBtn" data-action="mute" aria-pressed="true" aria-label="Unmute video">
+                                        <i class="fas fa-volume-mute" aria-hidden="true"></i>
+                                    </button>
+                                    <button type="button" class="notes-video-tool notes-video-tool--pip" id="notesVideoPipBtn" data-action="pip" hidden aria-label="Picture-in-picture">
+                                        <i class="fas fa-window-restore" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="blog-category">For recruiters &amp; clients</div>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> Updated May 2026</span>
+                            <span><i class="far fa-user"></i> Derrick Kapa</span>
+                        </div>
+                        <h3>What you get when we work together</h3>
+                        <p>For <strong>internships and junior roles</strong>, I prioritise clear communication, asking questions early, and shipping small increments you can review often. For <strong>freelance</strong>, I need a short brief: goal, deadline, budget ballpark, and who owns hosting or accounts. I quote honestly for student availability and keep you updated if scope changes.</p>
+                        <p>Proof beats promises: see <a href="#projects">Projects</a> for live and demo links. Prefer email or the form below for first contact — I respond within a few days.</p>
+                        <a href="#contact" class="blog-link"><i class="fas fa-paper-plane"></i> Get in touch</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In <span>Touch</span></h2>
+            <p class="contact-intro">Internship leads, job specs, or freelance briefs — send enough context that I can reply with something useful. Email works too: <a href="mailto:mohalekapa112@gmail.com">mohalekapa112@gmail.com</a>.</p>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Address</h3>
+                            <p>103 Van Den heever St, Klipfontein ext8, Witbank 1035</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p>mohalekapa112@gmail.com</p>
+                            <p>derkdev976@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <p>+27 78 003 4536</p>
+                            <p>+27 71 654 7121</p>
+                            <p>+27 84 038 9606</p>
+                        </div>
+                    </div>
+                    <img src="assets/Profile2.png" alt="Derrick Kapa" class="profile-img" width="300" height="300" loading="lazy" decoding="async">
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm" action="https://formspree.io/f/mkoppyad" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Your Name" data-fs-field>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required placeholder="your@email.com" data-fs-field>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required placeholder="Project Inquiry / Job Offer / etc." data-fs-field>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Tell me about your project or job opportunity..." data-fs-field></textarea>
+                        </div>
+                        <button type="submit" class="btn" data-fs-submit-btn><i class="fas fa-paper-plane"></i> Send Message</button>
+                        <p class="form-note"><i class="fas fa-lock"></i> Your message is delivered via Formspree to my inbox.</p>
+                        <p class="form-privacy">By submitting this form, you agree that your details are used only to respond to your inquiry. I don’t sell data or use it for marketing.</p>
+                        
+                        <!-- Success Message -->
+                        <div class="form-message success" data-fs-success>
+                            <i class="fas fa-check-circle"></i>
+                            <h3>Message Sent!</h3>
+                            <p>Thank you for reaching out. I'll get back to you soon.</p>
+                        </div>
+                        
+                        <!-- Error Message -->
+                        <div class="form-message error" data-fs-error>
+                            <i class="fas fa-exclamation-circle"></i>
+                            <p>Oops! Something went wrong. Please try again.</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">Derrick <span>Kapa</span></div>
+                <ul class="social-links">
+                    <li><a href="https://www.linkedin.com/in/derrick-kapa-69bb1a195" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+                    <li><a href="https://github.com/Derrick121K" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a></li>
+                    <li><a href="https://wa.me/27716547121" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp — Gossip@Tech"><i class="fab fa-whatsapp"></i></a></li>
+                    <li><a href="https://www.facebook.com/mohale.kapa.106" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a></li>
+                </ul>
+                <p class="copyright">&copy; 2026 Derrick Aaron Mohale Kapa. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CV Download Modal -->
+    <div id="cvModal" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(10,15,30,0.95); z-index:10000; align-items:center; justify-content:center;">
+        <div style="background:linear-gradient(145deg,#1e293b,#0f172a); border:1px solid #0ea5e9; border-radius:20px; padding:40px; max-width:700px; width:90%; text-align:center; box-shadow:0 20px 60px rgba(0,0,0,0.5);">
+            <h2 style="color:#0ea5e9; font-family:Inter,sans-serif; font-size:1.8rem; margin-bottom:10px;"><i class="fas fa-file-download"></i> Download CV</h2>
+            <p style="color:#94a3b8; margin-bottom:25px; font-size:0.95rem;">Choose a look — all three PDFs use the same single-column, job-application layout (summary, work, education, skills, projects, certifications, languages, links), paginate automatically, and include clickable links. <strong style="color:#e2e8f0;">Tip:</strong> for strict ATS portals, <strong style="color:#8b5cf6;">Classic</strong> (Times) is often safest; <strong style="color:#0ea5e9;">Modern</strong> is a strong default.</p>
+            
+            <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:15px; margin-bottom:25px;">
+                <div onclick="downloadCV('pdf','modern')" style="position:relative;background:rgba(14,165,233,0.15); border:1px solid #0ea5e9; border-radius:12px; padding:25px 15px; cursor:pointer; transition:all 0.3s;" onmouseover="this.style.background='rgba(14,165,233,0.3)';this.style.transform='translateY(-3px)'" onmouseout="this.style.background='rgba(14,165,233,0.15)';this.style.transform='translateY(0)'">
+                    <span style="position:absolute;top:8px;right:8px;background:#0ea5e9;color:#0f172a;font-size:0.65rem;font-weight:700;padding:3px 8px;border-radius:6px;">Recommended</span>
+                    <i class="fas fa-laptop" style="font-size:2rem; color:#0ea5e9; margin-bottom:10px;"></i>
+                    <h3 style="color:#fff; margin:8px 0 5px; font-size:1rem;">Modern</h3>
+                    <span style="color:#94a3b8; font-size:0.8rem;">Clean Professional</span>
+                </div>
+                <div onclick="downloadCV('pdf','classic')" style="background:rgba(139,92,246,0.15); border:1px solid #8b5cf6; border-radius:12px; padding:25px 15px; cursor:pointer; transition:all 0.3s;" onmouseover="this.style.background='rgba(139,92,246,0.3)';this.style.transform='translateY(-3px)'" onmouseout="this.style.background='rgba(139,92,246,0.15)';this.style.transform='translateY(0)'">
+                    <i class="fas fa-book" style="font-size:2rem; color:#8b5cf6; margin-bottom:10px;"></i>
+                    <h3 style="color:#fff; margin:8px 0 5px; font-size:1rem;">Classic</h3>
+                    <span style="color:#94a3b8; font-size:0.8rem;">Timeless Elegance</span>
+                </div>
+                <div onclick="downloadCV('pdf','creative')" style="background:rgba(236,72,153,0.15); border:1px solid #ec4899; border-radius:12px; padding:25px 15px; cursor:pointer; transition:all 0.3s;" onmouseover="this.style.background='rgba(236,72,153,0.3)';this.style.transform='translateY(-3px)'" onmouseout="this.style.background='rgba(236,72,153,0.15)';this.style.transform='translateY(0)'">
+                    <i class="fas fa-palette" style="font-size:2rem; color:#ec4899; margin-bottom:10px;"></i>
+                    <h3 style="color:#fff; margin:8px 0 5px; font-size:1rem;">Creative</h3>
+                    <span style="color:#94a3b8; font-size:0.8rem;">Bold Colorful</span>
+                </div>
+            </div>
+            
+            <div style="margin-bottom:20px;">
+                <div onclick="viewCV()" style="background:rgba(34,197,94,0.15); border:1px solid #22c55e; border-radius:12px; padding:20px; cursor:pointer; transition:all 0.3s;" onmouseover="this.style.background='rgba(34,197,94,0.3)'" onmouseout="this.style.background='rgba(34,197,94,0.15)'">
+                    <i class="fas fa-eye" style="font-size:1.5rem; color:#22c55e; margin-right:10px;"></i>
+                    <span style="color:#fff; font-weight:500;">Preview CV</span>
+                    <span style="color:#94a3b8; font-size:0.8rem; margin-left:8px;">View in browser</span>
+                </div>
+            </div>
+            
+            <button onclick="document.getElementById('cvModal').style.display='none'" style="background:#334155; border:none; color:#fff; padding:12px 35px; border-radius:25px; cursor:pointer; font-size:1rem; transition:all 0.3s;" onmouseover="this.style.background='#0ea5e9'" onmouseout="this.style.background='#334155'">Cancel</button>
+        </div>
+    </div>
+
+    <!-- PDF Viewer Modal -->
+    <div class="pdf-viewer-modal" id="pdfViewer">
+        <div class="pdf-header">
+            <h3><i class="fas fa-file-pdf"></i> CV Preview</h3>
+            <button class="pdf-close" onclick="closePDFViewer()">&times;</button>
+        </div>
+        <div class="pdf-container">
+            <iframe id="pdfFrame" src=""></iframe>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- jsPDF (for real PDF download with links) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="js/main.js"></script>
+    
+    <!-- Formspree AJAX Library -->
+    <script>
+        window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+        formspree('initForm', { formElement: '#contactForm', formId: 'mkoppyad' });
+    </script>
+    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+</body>
+</html>

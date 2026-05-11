@@ -1,0 +1,5 @@
+# Update the Sitemap URL to match your live site (same origin as your deployment)
+User-agent: *
+Allow: /
+
+Sitemap: https://derrick121k.github.io/portfolio/sitemap.xml
