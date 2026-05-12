@@ -473,6 +473,11 @@ function downloadCV(format, selectedStyle) {
     closeCVModal();
 }
 
+function previewCV(style) {
+    currentCVStyle = style || 'modern';
+    viewCV();
+}
+
 function viewCV() {
     const styleToView = currentCVStyle || 'modern';
     const cvFrame = document.getElementById('pdfFrame');
@@ -507,13 +512,23 @@ function downloadCVasPDF(style) {
 
     const cvData = getCVDataForPDF(style, { websiteUrl, socialLinks });
 
-    doc.setProperties({
-        title: `${cvData.name} — Resume`,
-        subject: `${cvData.titleLine} — job application`,
-        author: cvData.name,
-        keywords: 'resume, curriculum vitae, CV, software developer, mobile, web, South Africa',
-        creator: 'Portfolio (jsPDF)'
-    });
+    if (style === 'general') {
+        doc.setProperties({
+            title: `${cvData.name} — Resume (General)`,
+            subject: `${cvData.titleLine} — general / office / all-industry application`,
+            author: cvData.name,
+            keywords: 'resume, CV, administration, Microsoft Office, Excel, Word, general worker, driver, Code 14, South Africa',
+            creator: 'Portfolio (jsPDF)'
+        });
+    } else {
+        doc.setProperties({
+            title: `${cvData.name} — Resume`,
+            subject: `${cvData.titleLine} — job application`,
+            author: cvData.name,
+            keywords: 'resume, curriculum vitae, CV, software developer, mobile, web, South Africa',
+            creator: 'Portfolio (jsPDF)'
+        });
+    }
 
     if (style === 'classic') {
         renderClassicPDF(doc, cvData, pageWidth, pageHeight);
@@ -523,7 +538,10 @@ function downloadCVasPDF(style) {
         renderModernPDF(doc, cvData, pageWidth, pageHeight);
     }
 
-    const styleLabel = style === 'classic' ? 'Classic' : style === 'creative' ? 'Creative' : 'Modern';
+    const styleLabel = style === 'classic' ? 'Classic'
+        : style === 'creative' ? 'Creative'
+            : style === 'general' ? 'General'
+                : 'Modern';
     doc.save(`Derrick_Kapa_Resume_${styleLabel}.pdf`);
 }
 
@@ -630,43 +648,45 @@ function renderStandardResumeBody(doc, d, pageWidth, pageHeight, yStart, theme) 
         y += LH + theme.blockGap;
     });
 
-    section(theme.labels.skills);
+    section(d.pdfSkillsSectionTitle || theme.labels.skills);
     const skillsJoin = theme.skillsSeparator === 'pipe' ? d.skills.join(' | ') : d.skills.join(' • ');
     paragraph(skillsJoin, theme.blockGap + 2);
 
-    section(theme.labels.projects);
-    d.projects.forEach((project) => {
-        const descLines = doc.splitTextToSize(project.desc, cw);
-        const urlLines = project.url ? 1 : 0;
-        const blockH = LH * (2 + descLines.length + urlLines) + theme.projectBlockGap;
-        ensureSpace(blockH);
+    if (d.projects && d.projects.length > 0) {
+        section(theme.labels.projects);
+        d.projects.forEach((project) => {
+            const descLines = doc.splitTextToSize(project.desc, cw);
+            const urlLines = project.url ? 1 : 0;
+            const blockH = LH * (2 + descLines.length + urlLines) + theme.projectBlockGap;
+            ensureSpace(blockH);
 
-        doc.setFont(theme.fontFamily, 'bold');
-        doc.setFontSize(theme.bodySize);
-        doc.setTextColor(theme.headingColor[0], theme.headingColor[1], theme.headingColor[2]);
-        doc.text(project.name, mx, y);
-        y += LH;
-
-        doc.setFont(theme.fontFamily, 'normal');
-        doc.setTextColor(theme.secondaryColor[0], theme.secondaryColor[1], theme.secondaryColor[2]);
-        doc.text(project.tech, mx, y);
-        y += LH;
-
-        doc.setTextColor(theme.bodyColor[0], theme.bodyColor[1], theme.bodyColor[2]);
-        descLines.forEach((line) => {
-            if (y + LH > bottom) continuePage();
-            doc.text(line, mx, y);
+            doc.setFont(theme.fontFamily, 'bold');
+            doc.setFontSize(theme.bodySize);
+            doc.setTextColor(theme.headingColor[0], theme.headingColor[1], theme.headingColor[2]);
+            doc.text(project.name, mx, y);
             y += LH;
+
+            doc.setFont(theme.fontFamily, 'normal');
+            doc.setTextColor(theme.secondaryColor[0], theme.secondaryColor[1], theme.secondaryColor[2]);
+            doc.text(project.tech, mx, y);
+            y += LH;
+
+            doc.setTextColor(theme.bodyColor[0], theme.bodyColor[1], theme.bodyColor[2]);
+            descLines.forEach((line) => {
+                if (y + LH > bottom) continuePage();
+                doc.text(line, mx, y);
+                y += LH;
+            });
+
+            if (project.url) {
+                if (y + LH > bottom) continuePage();
+                doc.setTextColor(theme.linkColor[0], theme.linkColor[1], theme.linkColor[2]);
+                doc.textWithLink(project.url, mx, y, { url: project.url });
+                y += LH;
+            }
+            y += theme.projectBlockGap;
         });
-
-        if (project.url) {
-            if (y + LH > bottom) continuePage();
-            doc.setTextColor(theme.linkColor[0], theme.linkColor[1], theme.linkColor[2]);
-            doc.textWithLink(project.url, mx, y, { url: project.url });
-            y += LH;
-        }
-        y += theme.projectBlockGap;
-    });
+    }
 
     section(theme.labels.certifications);
     d.certifications.forEach((cert) => {
@@ -961,7 +981,30 @@ function getCVDataForPDF(style, { websiteUrl, socialLinks }) {
         experience: [{ title: "Driver Code 14", company: "Omplishs 16.4 Bell Transport", year: "2024 - Present" }]
     };
 
-    // Style is reserved for future differences, currently same PDF output for all.
+    if (style === 'general') {
+        return {
+            ...base,
+            titleLine: 'Reliable professional | Office administration, teamwork & general work',
+            pdfSkillsSectionTitle: 'Skills & competencies',
+            summary:
+                'Punctual, safety-conscious worker with a valid Code 14 driver’s licence and current commercial driving experience. Comfortable with Microsoft Office (Word, Excel, PowerPoint), email, and accurate data entry, filing, and scheduling support. Strong communication in English, IsiZulu, and SeSotho; customer-focused and quick to learn new systems and procedures. Security-trained (E-C). Currently completing a Diploma at IIE Rosebank College while actively seeking full-time, part-time, or shift-based roles across retail, warehousing, logistics, office administration, hospitality, and general labour — including roles that are not IT-specific.',
+            skills: [
+                'Microsoft Word — documents, formatting, mail merge basics',
+                'Microsoft Excel — spreadsheets, sorting & filters, basic formulas, charts (introductory)',
+                'Microsoft PowerPoint — presentations for meetings or training',
+                'Microsoft Outlook / webmail — email, attachments, calendar coordination',
+                'Administrative support — filing, messages, reception-style tasks, meeting notes',
+                'Customer service, teamwork, and clear verbal & written communication',
+                'Numeracy, stock awareness, and attention to detail',
+                'Physical fitness for manual tasks and on-your-feet shifts',
+                'Code 14 driver’s licence — current driver role (heavy vehicles / logistics)',
+                'Security awareness — Grade E-C certified',
+                'Reliable attendance, adaptability, and willingness to rotate duties'
+            ],
+            projects: []
+        };
+    }
+
     if (style === 'classic' || style === 'creative' || style === 'modern') return base;
     return base;
 }
@@ -986,51 +1029,19 @@ document.addEventListener('keydown', (e) => {
 
 // CV HTML Generator Functions
 function getCVHTML(style) {
-    const socialLinks = getSocialLinksFromPage();
     const websiteUrl = getPortfolioSiteUrlForCV();
+    const socialLinks = getSocialLinksFromPage();
+    const pdfStyle = style === 'general' ? 'general' : style;
+    const d = getCVDataForPDF(pdfStyle, { websiteUrl, socialLinks });
+    const preview = { ...d, title: d.titleLine };
 
-    const cvData = {
-        name: "Derrick Aaron Mohale Kapa",
-        title: "Software Developer",
-        email: "mohalekapa112@gmail.com",
-        emails: ["mohalekapa112@gmail.com", "derkdev976@gmail.com"],
-        phone: "+27 71 654 7121",
-        phones: ["+27 78 003 4536", "+27 71 654 7121", "+27 84 038 9606"],
-        location: "Witbank, Mpumalanga, SA",
-        fullAddress: "103 Van Den heever St, Klipfontein ext8, Witbank 1035",
-        websiteUrl,
-        socialLinks,
-        summary: "Software Development student at IIE Rosebank College with strong skills in mobile and web development. Passionate about building innovative digital solutions with React Native, Kotlin, and modern web technologies.",
-        skills: ["TypeScript", "JavaScript", "Java", "C#", "Kotlin", "React Native", "Next.js", "HTML5", "CSS3", "Supabase", "MongoDB", "SQL", "REST APIs", "Git", "VS Code", "Android Studio"],
-        education: [
-            { title: "Diploma in Software Development", school: "IIE Rosebank College", year: "2025 - Present (2nd Year)" },
-            { title: "Higher Certificate in Mobile Application & Web Development", school: "IIE Rosebank College", year: "2024" },
-            { title: "Grade 12", school: "Kwadela Secondary School", year: "2018" }
-        ],
-        certifications: ["Cyber Security Certified", "Security Grade E-C", "Code 14 Driver License"],
-        projects: [
-            { name: "Library Web-App", tech: "Next.js, PostgreSQL, Prisma", desc: "Library management with auth, catalog, and admin workflows" },
-            { name: "GossipOffice", tech: "Next.js, TypeScript, Tailwind, shadcn/ui", desc: "Local-first CV & office suite: builder, templates, PDF/DOCX/PPTX, optional AI" },
-            { name: "Gossipa", tech: "React Native, Supabase", desc: "Cross-platform social app: feed, chat, explore, and settings" },
-            { name: "Weather Forecast App", tech: "React Native, REST API", desc: "OpenWeatherMap integration with location-based forecasts" },
-            { name: "History App", tech: "Kotlin, Android", desc: "Compare user age to historical figures; validation for ages over 96; process and clear controls" },
-            { name: "Cybersecurity Chatbot", tech: "C#, .NET", desc: "Console cybersecurity education: voice greeting, ASCII UI, tips, personalization, input validation" },
-            { name: "Chalk Markit", tech: "HTML, CSS, JavaScript", desc: "Vanilla multi-page site: auth-style pages, dashboard, and profile" },
-            { name: "Animalcore", tech: "HTML, CSS, JavaScript, GitHub Pages", desc: "Deployed static site; live demo and repo for implementation details" },
-            { name: "Family Game Night (fam)", tech: "JavaScript, HTML, CSS", desc: "Family game night: host, join, questions, scores; live on GitHub Pages" },
-            { name: "REACH Foundation (WEDE5020 POE)", tech: "HTML, CSS, JavaScript", desc: "REACH Foundation community site; projects, donate, contact, newsletter; GitHub Pages" }
-        ],
-        experience: [{ title: "Driver Code 14", company: "Omplishs 16.4 Bell Transport", year: "2024 - Present" }],
-        languages: ["IsiZulu - Expert", "English - Fluent", "SeSotho - Fluent"]
-    };
-    
-    if (style === 'modern') {
-        return getModernCV(cvData);
-    } else if (style === 'classic') {
-        return getClassicCV(cvData);
-    } else {
-        return getCreativeCV(cvData);
+    if (style === 'modern' || style === 'general') {
+        return getModernCV(preview);
     }
+    if (style === 'classic') {
+        return getClassicCV(preview);
+    }
+    return getCreativeCV(preview);
 }
 
 function getModernCV(d) {
@@ -1082,7 +1093,7 @@ function getModernCV(d) {
 <body>
     <div class="header">
         <h1>${d.name}</h1>
-        <div class="title">Software Developer | Mobile & Web Developer</div>
+        <div class="title">${d.titleLine || d.title || ''}</div>
         <div class="contact-row" style="flex-direction: column; align-items: center; gap: 6px;">
             <span>✉ ${(d.emails || [d.email]).join(' · ')}</span>
             <span>📱 ${(d.phones || [d.phone]).join(' · ')}</span>
@@ -1096,7 +1107,7 @@ function getModernCV(d) {
     
     <div class="two-col">
         <div>
-            <h2>Skills</h2>
+            <h2>${d.pdfSkillsSectionTitle || 'Skills'}</h2>
             <div class="skills-grid">
                 ${d.skills.map(s => `<span class="skill-tag">${s}</span>`).join('')}
             </div>
@@ -1121,10 +1132,10 @@ function getModernCV(d) {
             <h2>Summary</h2>
             <p>${d.summary}</p>
             
-            <h2>Projects</h2>
+            ${d.projects && d.projects.length ? `<h2>Projects</h2>
             <ul>
                 ${d.projects.map(p => `<li><span class="job-title">${p.name}</span><br>${p.tech}<br>${p.desc}</li>`).join('')}
-            </ul>
+            </ul>` : ''}
             
             <h2>Experience</h2>
             <ul>
@@ -1177,7 +1188,7 @@ function getClassicCV(d) {
 <body>
     <div class="header">
         <h1>${d.name}</h1>
-        <div class="title">${d.title}</div>
+        <div class="title">${d.titleLine || d.title || ''}</div>
         <div class="contact-info">
             ${(d.emails || [d.email]).map((e) => `<span>${e}</span>`).join('')}
             ${(d.phones || [d.phone]).map((p) => `<span>${p}</span>`).join('')}
@@ -1192,7 +1203,7 @@ function getClassicCV(d) {
     <h2>Professional Summary</h2>
     <p>${d.summary}</p>
     
-    <h2>Technical Skills</h2>
+    <h2>${d.pdfSkillsSectionTitle || 'Technical Skills'}</h2>
     <p class="skills">${d.skills.join(' | ')}</p>
     
     <h2>Education</h2>
@@ -1205,10 +1216,10 @@ function getClassicCV(d) {
         ${d.certifications.map(c => `<li>${c}</li>`).join('')}
     </ul>
     
-    <h2>Projects</h2>
+    ${d.projects && d.projects.length ? `<h2>Projects</h2>
     <ul>
         ${d.projects.map(p => `<li><span class="job-title">${p.name}</span><br><span class="project-tech">${p.tech}</span><br>${p.desc}</li>`).join('')}
-    </ul>
+    </ul>` : ''}
     
     <h2>Work Experience</h2>
     <ul>
@@ -1271,7 +1282,7 @@ function getCreativeCV(d) {
         <aside class="sidebar">
             <div class="header">
                 <h1>${d.name}</h1>
-                <div class="title">${d.title}</div>
+                <div class="title">${d.titleLine || d.title || ''}</div>
                 <div class="contact-row">
                     ${(d.emails || [d.email]).map((e) => `<span>${e}</span>`).join('')}
                     ${(d.phones || [d.phone]).map((p) => `<span>${p}</span>`).join('')}
@@ -1283,7 +1294,7 @@ function getCreativeCV(d) {
                 </div>
             </div>
 
-            <h3 class="section-title-left">Skills</h3>
+            <h3 class="section-title-left">${d.pdfSkillsSectionTitle || 'Skills'}</h3>
             <div class="skills-grid">
                 ${d.skills.map(s => `<span class="skill-tag">${s}</span>`).join('')}
             </div>
@@ -1308,12 +1319,12 @@ function getCreativeCV(d) {
                 </ul>
             </section>
 
-            <section>
+            ${d.projects && d.projects.length ? `<section>
                 <h2>Projects</h2>
                 <ul>
                     ${d.projects.map(p => `<li><span class="job-title">${p.name}</span><br><span class="company">${p.tech}</span><br>${p.desc}</li>`).join('')}
                 </ul>
-            </section>
+            </section>` : ''}
 
             <section>
                 <h2>Experience</h2>
