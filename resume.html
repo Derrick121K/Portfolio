@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en-ZA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Professional software development CV for Derrick Kapa, South Africa.">
+  <meta name="theme-color" content="#12121e">
+  <title>Derrick Kapa | Software Development CV</title>
+  <style>
+    :root { --ink:#202034; --muted:#5f6074; --purple:#6944b9; --teal:#087e91; --line:#dedce9; }
+    * { box-sizing:border-box; }
+    html { background:#efedf5; }
+    body { max-width:900px; margin:30px auto; padding:0 20px; color:var(--ink); background:#fff; font:15px/1.55 Arial, Helvetica, sans-serif; box-shadow:0 10px 45px rgba(20,15,50,.12); }
+    main { padding:44px 52px 48px; }
+    .toolbar { display:flex; justify-content:space-between; gap:12px; align-items:center; padding:14px 52px; background:#f7f5fc; border-bottom:1px solid var(--line); }
+    .toolbar a,.toolbar button { font:700 13px Arial,sans-serif; text-decoration:none; border:1px solid var(--line); border-radius:9px; padding:9px 12px; color:var(--ink); background:white; cursor:pointer; }
+    .toolbar .print { background:var(--purple); border-color:var(--purple); color:white; }
+    .toolbar-group { display:flex; gap:9px; flex-wrap:wrap; }
+    header { border-bottom:2px solid var(--purple); padding-bottom:20px; margin-bottom:22px; }
+    h1 { font-size:31px; line-height:1.1; margin:0 0 8px; letter-spacing:-.7px; }
+    .role { color:var(--purple); font-size:15px; font-weight:700; margin-bottom:12px; }
+    .contact { display:flex; flex-wrap:wrap; gap:7px 18px; font-size:12.5px; color:var(--muted); }
+    .contact a { color:var(--teal); text-decoration:none; }
+    section { margin-top:22px; break-inside:avoid; }
+    h2 { text-transform:uppercase; font-size:13px; letter-spacing:1.4px; margin:0 0 10px; color:var(--purple); padding-bottom:6px; border-bottom:1px solid var(--line); }
+    p { margin:0 0 8px; }
+    .summary { font-size:14px; }
+    .skills { display:grid; grid-template-columns:1fr 1fr; gap:7px 20px; }
+    .skill-line { font-size:13px; }
+    .skill-line strong { color:var(--ink); }
+    .entry { margin:0 0 14px; break-inside:avoid; }
+    .entry-heading { display:flex; align-items:baseline; justify-content:space-between; gap:12px; }
+    h3 { font-size:14px; margin:0 0 2px; }
+    .date { color:var(--muted); font-size:12px; white-space:nowrap; }
+    .subheading { color:var(--muted); font-size:12.5px; margin-bottom:5px; }
+    ul { margin:5px 0 0; padding-left:18px; }
+    li { padding-left:2px; margin:3px 0; font-size:13px; }
+    .projects { display:grid; grid-template-columns:1fr 1fr; gap:11px 22px; }
+    .project { break-inside:avoid; }
+    .project h3 { margin-bottom:3px; }
+    .project p { font-size:12.5px; margin-bottom:3px; }
+    a { color:var(--teal); overflow-wrap:anywhere; }
+    .note { color:var(--muted); font-size:11.5px; }
+    @media (max-width:650px) {
+      body { margin:0; padding:0; }
+      main { padding:26px 22px; }
+      .toolbar { padding:12px 22px; align-items:flex-start; flex-direction:column; }
+      .skills,.projects { grid-template-columns:1fr; }
+      .entry-heading { display:block; }
+      .date { display:block; margin-bottom:4px; }
+    }
+    @page { size:A4; margin:13mm; }
+    @media print {
+      html,body { background:#fff; margin:0; padding:0; max-width:none; box-shadow:none; font-size:11pt; }
+      main { padding:0; }
+      .toolbar { display:none !important; }
+      a { color:inherit; text-decoration:none; }
+      section, .entry, .project { break-inside:avoid; }
+      h2,h3 { break-after:avoid; }
+      .note { font-size:9pt; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar" aria-label="CV actions">
+    <div class="toolbar-group">
+      <a href="index.html">← Back to portfolio</a>
+      <a href="https://github.com/Derrick121K?tab=repositories" target="_blank" rel="noopener noreferrer">GitHub profile ↗</a>
+    </div>
+    <button class="print" type="button" onclick="window.print()">Print / Save as PDF</button>
+  </div>
+  <main>
+    <header>
+      <h1>Derrick Aaron Mohale Kapa</h1>
+      <div class="role">Software Developer · Web & Mobile Applications</div>
+      <div class="contact">
+        <a href="mailto:mohalekapa112@gmail.com">mohalekapa112@gmail.com</a>
+        <a href="https://github.com/Derrick121K">github.com/Derrick121K</a>
+        <a href="https://derrick121k.github.io/Portfolio/">Portfolio website</a>
+        <a href="https://www.linkedin.com/in/derrick-kapa-69bb1a195">LinkedIn profile</a>
+        <span>eMalahleni, Mpumalanga, South Africa</span>
+      </div>
+    </header>
+
+    <section>
+      <h2>Professional summary</h2>
+      <p class="summary">Software development student and independent project builder with hands-on experience creating web applications, mobile app prototypes and business software. Works with TypeScript, JavaScript, React, Next.js, React Native, Supabase, SQL and C#. Interested in junior software development roles and internships where practical problem-solving, learning, testing and collaboration are valued.</p>
+    </section>
+
+    <section>
+      <h2>Technical skills</h2>
+      <div class="skills">
+        <div class="skill-line"><strong>Languages:</strong> TypeScript, JavaScript, Java, C#, Kotlin, SQL, Python</div>
+        <div class="skill-line"><strong>Web:</strong> React, Next.js, HTML5, CSS3, Tailwind CSS</div>
+        <div class="skill-line"><strong>Mobile:</strong> React Native, Expo, Android development</div>
+        <div class="skill-line"><strong>Data & APIs:</strong> PostgreSQL, Supabase, Prisma, MongoDB, REST APIs</div>
+        <div class="skill-line"><strong>Tools:</strong> Git, GitHub, Node.js, npm, VS Code, Postman</div>
+        <div class="skill-line"><strong>Practices:</strong> Debugging, testing fundamentals, database design, API integration</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Project experience</h2>
+      <div class="entry">
+        <div class="entry-heading"><h3>Independent Software & Web Development Projects</h3><span class="date">Sep 2024 – Present</span></div>
+        <div class="subheading">Personal, academic and business-focused applications</div>
+        <ul>
+          <li>Build and iterate on web and mobile applications using modern JavaScript/TypeScript frameworks, C# and database-backed workflows.</li>
+          <li>Develop responsive user interfaces, connect APIs and data stores, and work through feature requirements and debugging.</li>
+          <li>Create project documentation and public portfolio examples; keep private or client-specific code restricted.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Selected projects</h2>
+      <div class="projects">
+        <div class="project">
+          <h3>Arletion — Lead Management Platform</h3>
+          <p>Lead-management and lead-intelligence project focused on business workflows and data handling.</p>
+          <a href="https://github.com/Derrick121K/Arletion">github.com/Derrick121K/Arletion</a>
+        </div>
+        <div class="project">
+          <h3>SAS Mndebele Trading — Business Platform</h3>
+          <p>Public website and installable PWA experience with dashboard, role-based access, profiles, mail workflows and tender-related features.</p>
+          <a href="https://sasmndebele.co.za/">sasmndebele.co.za</a>
+        </div>
+        <div class="project">
+          <h3>EduBeyond — Education Platform</h3>
+          <p>Private education-platform project exploring multi-tenant administration and education workflows.</p>
+          <a href="https://github.com/Derrick121K/EduBeyond-ecosystem">Private repo reference</a>
+        </div>
+        <div class="project">
+          <h3>ParkSentry — C# Application</h3>
+          <p>Parking and vehicle-management project exploring operational workflows and business logic.</p>
+          <a href="https://github.com/Derrick121K/Park-Sentry">github.com/Derrick121K/Park-Sentry</a>
+        </div>
+        <div class="project">
+          <h3>GossipOffice — Productivity Web App</h3>
+          <p>Office-style application concept with CV and document workflows.</p>
+          <a href="https://github.com/Derrick121K/GossipOffice">GitHub repository</a>
+        </div>
+        <div class="project">
+          <h3>WeatherNewsApp — Mobile Application</h3>
+          <p>React Native project exploring mobile interface design and API-driven weather data.</p>
+          <a href="https://github.com/Derrick121K/WeatherNewsApp">GitHub repository</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <div class="entry">
+        <div class="entry-heading"><h3>Diploma in Information Technology — Software Development</h3><span class="date">2025 – Present</span></div>
+        <div class="subheading">IIE Rosebank College · In progress</div>
+        <ul>
+          <li>Programming 2A: 88% · Database (Introduction): 84%</li>
+          <li>Information Security: 83% · System Analysis and Design: 76%</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <div class="entry-heading"><h3>Higher Certificate in Mobile Application and Web Development</h3><span class="date">Completed 2024</span></div>
+        <div class="subheading">IIE Rosebank College</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Additional credentials</h2>
+      <p>Cybersecurity training · Security Grade E–C · Code 14 driver's licence</p>
+    </section>
+
+    <section>
+      <h2>Professional links</h2>
+      <p><a href="https://derrick121k.github.io/Portfolio/">Portfolio</a> · <a href="https://github.com/Derrick121K?tab=repositories">All repositories</a> · <a href="https://www.linkedin.com/in/derrick-kapa-69bb1a195">LinkedIn</a></p>
+      <p class="note">Project descriptions summarise current portfolio work and do not imply that every project is production-ready. Private implementation details are shared only with appropriate permission.</p>
+    </section>
+  </main>
+</body>
+</html>
