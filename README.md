@@ -71,6 +71,15 @@ A web application exploring CV and document workflows with an office-style works
 A private social application project. A source walkthrough can be discussed where appropriate.  
 **Primary technology:** TypeScript / React Native ecosystem.
 
+### ELEVATE Debt Solutions — Business operations platform
+A private business-operations system spanning lead workflows, client and staff administration, reporting, documents, finance-related modules and integration management.  
+**Primary technology:** TypeScript.  
+**Source:** Private implementation; walkthrough by request.
+
+### Macuvela Services — Solar services online store
+A private online-store project for a solar-services business, intended to help customers explore services and products.  
+**Source:** Private repository; walkthrough by request.
+
 ### [WeatherNewsApp](https://github.com/Derrick121K/WeatherNewsApp)
 A React Native project exploring API-driven mobile experiences.  
 **Repository:** [GitHub](https://github.com/Derrick121K/WeatherNewsApp)
@@ -101,6 +110,10 @@ An educational C# project focused on cybersecurity-awareness interactions.
 3. Keep progress, technical decisions and blockers visible.
 4. Agree on deliverables, ownership, hosting and handover before freelance work begins.
 5. Avoid exposing customer information, credentials or private source code in public repositories.
+
+## CV
+
+A concise, print-friendly CV is available at [resume.html](https://derrick121k.github.io/Portfolio/resume.html). Open it in a browser and use **Print / Save as PDF** to generate a PDF copy.
 
 ## Contact
 
