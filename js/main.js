@@ -1,6 +1,5 @@
 (() => {
   "use strict";
-
   const root = document.documentElement;
   const themeToggle = document.getElementById("themeToggle");
   const menuToggle = document.getElementById("menuToggle");
@@ -9,17 +8,13 @@
   const filterButtons = Array.from(document.querySelectorAll("[data-filter]"));
   const projectCount = document.getElementById("projectCount");
   const currentYear = document.getElementById("currentYear");
-
   if (currentYear) currentYear.textContent = String(new Date().getFullYear());
 
-  // Persist theme where storage is available; fall back gracefully in private browsing.
   let preferredTheme = "dark";
   try {
     const stored = localStorage.getItem("portfolio-theme");
     if (stored === "light" || stored === "dark") preferredTheme = stored;
-  } catch (_) {
-    // Storage may be disabled by the browser.
-  }
+  } catch (_) {}
   root.dataset.theme = preferredTheme;
 
   const updateThemeButton = () => {
@@ -29,15 +24,12 @@
     themeToggle.setAttribute("aria-label", isDark ? "Switch to light theme" : "Switch to dark theme");
     themeToggle.setAttribute("aria-pressed", String(!isDark));
   };
-
   updateThemeButton();
-  if (themeToggle) {
-    themeToggle.addEventListener("click", () => {
-      root.dataset.theme = root.dataset.theme === "light" ? "dark" : "light";
-      try { localStorage.setItem("portfolio-theme", root.dataset.theme); } catch (_) {}
-      updateThemeButton();
-    });
-  }
+  if (themeToggle) themeToggle.addEventListener("click", () => {
+    root.dataset.theme = root.dataset.theme === "light" ? "dark" : "light";
+    try { localStorage.setItem("portfolio-theme", root.dataset.theme); } catch (_) {}
+    updateThemeButton();
+  });
 
   const closeMenu = () => {
     if (!menuToggle || !primaryNav) return;
@@ -45,7 +37,6 @@
     menuToggle.setAttribute("aria-expanded", "false");
     menuToggle.setAttribute("aria-label", "Open navigation");
   };
-
   if (menuToggle && primaryNav) {
     menuToggle.addEventListener("click", () => {
       const open = menuToggle.getAttribute("aria-expanded") !== "true";
@@ -54,16 +45,13 @@
       primaryNav.classList.toggle("is-open", open);
     });
     primaryNav.querySelectorAll("a").forEach(link => link.addEventListener("click", closeMenu));
-    document.addEventListener("keydown", event => {
-      if (event.key === "Escape") closeMenu();
-    });
+    document.addEventListener("keydown", event => { if (event.key === "Escape") closeMenu(); });
     document.addEventListener("click", event => {
       if (!primaryNav.contains(event.target) && !menuToggle.contains(event.target)) closeMenu();
     });
   }
 
-  // Filter projects without hiding any projects until the visitor chooses a filter.
-  const setProjectFilter = (filter) => {
+  const setProjectFilter = filter => {
     let visible = 0;
     projectCards.forEach(card => {
       const categories = (card.dataset.category || "").split(/\s+/);
@@ -76,14 +64,10 @@
       button.classList.toggle("is-active", active);
       button.setAttribute("aria-pressed", String(active));
     });
-    if (projectCount) projectCount.textContent = `Showing ${visible} project${visible === 1 ? "" : "s"}`;
+    if (projectCount) projectCount.textContent = "Showing " + visible + " project" + (visible === 1 ? "" : "s");
   };
+  filterButtons.forEach(button => button.addEventListener("click", () => setProjectFilter(button.dataset.filter || "all")));
 
-  filterButtons.forEach(button => {
-    button.addEventListener("click", () => setProjectFilter(button.dataset.filter || "all"));
-  });
-
-  // Smooth anchor navigation with native fallback for reduced-motion preferences.
   const reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener("click", event => {
@@ -91,8 +75,22 @@
       if (!targetId || targetId === "#") return;
       const target = document.querySelector(targetId);
       if (!target) return;
+      if (primaryNav && primaryNav.contains(link)) closeMenu();
       event.preventDefault();
       target.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
     });
   });
+
+  if ("IntersectionObserver" in window && primaryNav) {
+    const navLinks = Array.from(primaryNav.querySelectorAll('a[href^="#"]'));
+    const sections = navLinks.map(link => document.querySelector(link.getAttribute("href"))).filter(Boolean);
+    const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      navLinks.forEach(link => {
+        const current = link.getAttribute("href") === "#" + entry.target.id;
+        link.classList.toggle("is-current", current);
+      });
+    }), { rootMargin: "-28% 0px -62% 0px", threshold: 0 });
+    sections.forEach(section => observer.observe(section));
+  }
 })();
