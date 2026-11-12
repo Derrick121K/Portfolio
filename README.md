@@ -1,147 +1,94 @@
 # Derrick Kapa — Developer Portfolio
 
-<p align="center">
-  <img src="assets/me.jpg" alt="Derrick Kapa" width="132" />
-</p>
+Modern, responsive portfolio website for Derrick Aaron Mohale Kapa.
 
-<h1 align="center">Derrick Aaron Mohale Kapa</h1>
-<p align="center"><strong>Software Developer · Web & Mobile · Business Applications</strong></p>
-<p align="center">South Africa · Open to junior roles, internships, contract work and freelance projects</p>
+**Live website:** https://derrick121k.github.io/Portfolio/  
+**GitHub:** https://github.com/Derrick121K  
+**LinkedIn:** https://www.linkedin.com/in/derrick-kapa-69bb1a195
 
-<p align="center">
-  <a href="https://derrick121k.github.io/Portfolio/"><strong>Live Portfolio</strong></a> ·
-  <a href="https://github.com/Derrick121K?tab=repositories">GitHub Projects</a> ·
-  <a href="https://www.linkedin.com/in/derrick-kapa-69bb1a195">LinkedIn</a> ·
-  <a href="mailto:mohalekapa112@gmail.com">Email</a>
-</p>
+## Overview
 
----
+A static portfolio built with HTML, CSS and vanilla JavaScript. It presents Derrick's software development profile, technical toolkit, selected projects, education and contact details.
 
-## About
+## Features
 
-I build practical web, mobile and business software, with a focus on accessible interfaces, understandable workflows, data-backed features and maintainable code. My work includes responsive websites, React and Next.js applications, React Native mobile experiences, business platforms and C# desktop projects.
+- Responsive layout for desktop, tablet and mobile.
+- Dark and light themes with locally persisted preference.
+- Mobile navigation and keyboard-friendly interactions.
+- Project cards with category filters and live result announcements.
+- Technical profile covering languages, web/mobile, backend, databases, AI and delivery tools.
+- Education and selected academic results.
+- Printable CV page with A4 print stylesheet.
+- Search and social-sharing metadata, canonical URL and Person structured data.
+- Contact form routed through Formspree.
 
-I completed a **Higher Certificate in Mobile Application and Web Development** and am currently pursuing a **Diploma in Information Technology specialising in Software Development** at IIE Rosebank College.
+## Technology profile
 
-I am interested in junior software and web development roles, internships, graduate opportunities, and clearly scoped software projects for businesses.
+### Core languages and query language
+TypeScript, JavaScript, Java, C#, Kotlin, Python and SQL.
 
-## Technology
+### Additional languages / DSLs
+HTML5, CSS3, Bash / Shell, PowerShell, HCL, Gradle DSL, Prisma Schema and Mako templates.
 
-| Area | Technologies and tools |
-|---|---|
-| Languages | TypeScript, JavaScript, Java, C#, Kotlin, SQL, Python |
-| Web | React, Next.js, HTML, CSS, responsive UI |
-| Mobile | React Native, Expo, Android development |
-| Data and APIs | PostgreSQL, Supabase, Prisma, MongoDB, REST APIs |
-| Development tools | Git, GitHub, Node.js, npm, VS Code, Postman |
-| Practices | Debugging, testing fundamentals, database design, API integration and access-control concepts |
+### Frameworks and platforms
+React, Next.js, React Native, Expo, Vite, Node.js, FastAPI, Tailwind CSS, Android, PostgreSQL, Supabase, MongoDB, Prisma, Docker, Terraform, Vercel and Render.
 
-This list represents technologies used across my learning and projects; it does not imply equal proficiency or that every project is production-ready.
+### AI and product capabilities
+LLM integrations, AI agents, chat interfaces, content generation, document assistance, recommendations, moderation workflows and automation.
 
-## Selected projects
+Technology depth and frequency of use vary across projects. JSON, YAML, XML, TOML, INI and Markdown are configuration, data or documentation formats and are not counted as programming languages.
 
-The [live portfolio](https://derrick121k.github.io/Portfolio/) includes project summaries and further links. Some projects are private or works in progress; where source code is not public, I can discuss a walkthrough subject to permission.
+## Project highlights
 
-### [Arletion — Lead management](https://github.com/Derrick121K/Arletion)
-A lead management and lead-intelligence platform foundation, focused on business lead workflows and data handling.  
-**Preview deployment:** [Open the web app](https://arletion-web.onrender.com/) · **API documentation:** [Open API docs](https://arletion-api.onrender.com/docs). This is a private preview for review and testing, not production use. The Render Free Postgres database may expire; do not enter real client data. Availability and functionality may also depend on the configured services.  
-**Primary technology:** Python.
+- Arletion — lead intelligence and business opportunity platform foundation.
+- ELEVATE — business operations platform (private implementation).
+- THENEXUS — strategy and dynasty simulation (private repository).
+- JusticeConnect — legal marketplace concept.
+- EduBeyond — education platform (private repository).
+- GossipOffice — productivity and document application.
+- RumoraPlugs — social mobile application (private repository).
+- Virexa Health — healthcare-management SaaS project.
+- Macuvela Services — solar-services business platform (private repository).
+- ParkSentry — C# business application.
+- WeatherNewsApp — mobile application.
+- History-App1 — Kotlin Android application.
+- CybersecurityChatbot — C# educational application.
+- SAS Mndebele Trading — public business website and PWA experience.
 
-### SAS Mndebele Trading — Business platform
-A business web platform incorporating a public website and installable PWA experience, protected dashboard, role-based access, user profile creation, company mail workflows and tender-related functionality. The implementation and source remain private.  
-**Website:** [sasmndebele.co.za](https://sasmndebele.co.za/)
+Project descriptions distinguish public repositories from private implementations and do not imply that every project is production-ready.
 
-### EduBeyond — Education operating system
-A private multi-tenant education platform project covering institution administration and education workflows. Source access is restricted.  
-**Primary technology:** TypeScript / Next.js.  
-**Repository:** [Private repository](https://github.com/Derrick121K/EduBeyond-ecosystem)
+## Local development
 
-### [Virexa Health](https://github.com/Derrick121K/Virexa-Healt)
-A healthcare-management SaaS project for exploring practice and clinic workflows. Review its current implementation and security before any real-world clinical use.  
-**Primary technology:** TypeScript.
+No package installation is required for the static portfolio.
 
-### [ParkSentry](https://github.com/Derrick121K/Park-Sentry)
-A parking, vehicle and safety management software project.  
-**Primary technology:** C#.
-
-### [GossipOffice](https://github.com/Derrick121K/GossipOffice)
-A web application exploring CV and document workflows with an office-style workspace.  
-**Demo:** [go-office.vercel.app](https://go-office.vercel.app/) · **Technology:** TypeScript / Next.js.
-
-### [RumoraPlugs](https://github.com/Derrick121K/RumoraPlugs)
-A private social application project. A source walkthrough can be discussed where appropriate.  
-**Primary technology:** TypeScript / React Native ecosystem.
-
-### ELEVATE Debt Solutions — Business operations platform
-A private business-operations system spanning lead workflows, client and staff administration, reporting, documents, finance-related modules and integration management.  
-**Primary technology:** TypeScript.  
-**Source:** Private implementation; walkthrough by request.
-
-### Macuvela Services — Solar services online store
-A private online-store project for a solar-services business, intended to help customers explore services and products.  
-**Source:** Private repository; walkthrough by request.
-
-### [WeatherNewsApp](https://github.com/Derrick121K/WeatherNewsApp)
-A React Native project exploring API-driven mobile experiences.  
-**Repository:** [GitHub](https://github.com/Derrick121K/WeatherNewsApp)
-
-### [SiyasShots](https://github.com/Derrick121K/SiyasShots)
-A photography website project for presenting visual work and services.  
-**Demo:** [Open website](https://derrick121k.github.io/SiyasShots/)
-
-### [CybersecurityChatbot](https://github.com/Derrick121K/CybersecurityChatbot)
-An educational C# project focused on cybersecurity-awareness interactions.  
-**Repository:** [GitHub](https://github.com/Derrick121K/CybersecurityChatbot)
-
-### More work
-
-- [All public repositories](https://github.com/Derrick121K?tab=repositories)
-- [Portfolio source](https://github.com/Derrick121K/Portfolio)
-- [Live portfolio website](https://derrick121k.github.io/Portfolio/)
-
-## Education
-
-- **Diploma in Information Technology — Software Development**, IIE Rosebank College — in progress.
-- **Higher Certificate in Mobile Application and Web Development**, IIE Rosebank College — completed in 2024.
-
-## Working approach
-
-1. Clarify the intended user, problem, scope and timeline before implementation.
-2. Break work into milestones that can be reviewed.
-3. Keep progress, technical decisions and blockers visible.
-4. Agree on deliverables, ownership, hosting and handover before freelance work begins.
-5. Avoid exposing customer information, credentials or private source code in public repositories.
-
-## CV
-
-A concise, print-friendly CV is available at [resume.html](https://derrick121k.github.io/Portfolio/resume.html). Open it in a browser and use **Print / Save as PDF** to generate a PDF copy.
-
-## Contact
-
-- **Email:** [mohalekapa112@gmail.com](mailto:mohalekapa112@gmail.com)
-- **LinkedIn:** [Derrick Kapa](https://www.linkedin.com/in/derrick-kapa-69bb1a195)
-- **GitHub:** [Derrick121K](https://github.com/Derrick121K)
-- **Portfolio:** [derrick121k.github.io/Portfolio](https://derrick121k.github.io/Portfolio/)
-
-## Run locally
-
-This is a static website built with HTML, CSS and JavaScript.
-
-```bash
+\`\`\`bash
 git clone https://github.com/Derrick121K/Portfolio.git
 cd Portfolio
-```
+python -m http.server 8000
+\`\`\`
 
-Open `index.html` in a browser, or run a local static web server from the project folder. No package installation is required for the core site.
+Visit http://localhost:8000.
 
-The contact form uses Formspree and therefore requires that its configured form endpoint remains active. Fonts and icons use external CDNs.
+## Structure
+
+\`\`\`text
+Portfolio/
+├── assets/
+├── css/
+│   └── style.css
+├── js/
+│   └── main.js
+├── index.html
+├── resume.html
+└── README.md
+\`\`\`
 
 ## Deployment
 
-The site is hosted on GitHub Pages at **https://derrick121k.github.io/Portfolio/**. After pushing changes to the configured publishing branch, verify the Pages deployment and test the live site on both desktop and mobile.
+The site is published through GitHub Pages at https://derrick121k.github.io/Portfolio/.
 
-## Notes
+Push changes to the configured publishing branch and verify the GitHub Pages deployment. After deployment, test navigation, theme toggle, project filters, CV print page, image loading and contact form.
 
-- Live demo availability can change; verify links before presenting them as currently available.
-- Some projects are coursework, prototypes, private systems or works in progress. Their descriptions identify their focus and are not a claim that all are production-ready.
-- Private/client-specific source code and data are intentionally not published.
+## Contact
+
+mohalekapa112@gmail.com
