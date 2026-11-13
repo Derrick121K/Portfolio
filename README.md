@@ -38,6 +38,13 @@ LLM integrations, AI agents, chat interfaces, content generation, document assis
 
 Technology depth and frequency of use vary across projects. JSON, YAML, XML, TOML, INI and Markdown are configuration, data or documentation formats and are not counted as programming languages.
 
+## StudyFlow — HCN6222 Final POE
+
+- **Live prototype:** https://derrick121k.github.io/Portfolio/studyflow/
+- **Source code:** https://github.com/Derrick121K/Portfolio/tree/main/studyflow
+- **Technology:** HTML5, CSS3 and vanilla JavaScript.
+- **Purpose:** Student assignment and deadline planning, with task management, calendar, study-plan sharing, accessibility preferences and local JSON backup/restore.
+
 ## Project highlights
 
 - Arletion — lead intelligence and business opportunity platform foundation.
