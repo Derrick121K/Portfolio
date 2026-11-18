@@ -1,17 +1,22 @@
-# The African Wood House — Concept Prototype
+# The African Wood House — E-commerce Concept Prototype
 
-A self-contained, responsive website concept prepared by JMSE KAPA HOLDINGS (PTY) LTD and added to the Derrick Kapa portfolio.
+A responsive luxury woodcraft storefront concept prepared by JMSE KAPA HOLDINGS (PTY) LTD and added to the Derrick Kapa portfolio.
 
 ## Live preview
 https://derrick121k.github.io/Portfolio/african-wood-house/
 
-## Included
-- Luxury South African artisan-brand presentation
-- Client-provided brand mark and artwork photographs
-- Demo product catalogue with category filters and sorting
-- Product detail views and enquiry bag interactions
-- Responsive desktop and mobile layout
-- Brand story and international market ambition
+## Store experience
+- Warm chocolate, cream, ivory and gold visual identity
+- Brand story and South African artisan positioning
+- Product catalogue with category filters, search and sorting
+- Product detail views, finish selection and quantity selection
+- Wishlist / saved pieces
+- Shopping bag with quantity changes and item removal
+- Simulated checkout with customer details, local or indicative international delivery, and payment-method selection
+- Demo order confirmation and reference number
+- Responsive desktop and mobile layouts
 
-## Prototype limitations
-This is a concept demonstration, not a production online store. Product names, descriptions and ZAR prices are illustrative. The contact form and enquiry bag do not transmit or store messages. There is no checkout, payment processing, shipping calculation, live stock, or customer account integration. Final content and business operations require client approval.
+## Demonstration limitations
+This is a concept prototype, not a production online store. Product names, descriptions, ZAR prices, stock and delivery fees are illustrative and require client approval. Checkout and order confirmation are simulated. No payments are processed, no card or banking details are collected, and no customer information or enquiries are transmitted or stored. There is no live stock, courier, payment-provider, email or customer-account integration.
+
+Final product data, brand copy, contact details, policies and fulfilment capabilities must be supplied or approved by The African Wood House before a production launch.

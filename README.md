@@ -45,12 +45,12 @@ Technology depth and frequency of use vary across projects. JSON, YAML, XML, TOM
 - **Technology:** HTML5, CSS3 and vanilla JavaScript.
 - **Purpose:** Student assignment and deadline planning, with task management, calendar, study-plan sharing, accessibility preferences and local JSON backup/restore.
 
-## African Wood House — Client Website Prototype
+## African Wood House — Client E-commerce Prototype
 
 - **Live preview:** https://derrick121k.github.io/Portfolio/african-wood-house/
 - **Source files:** https://github.com/Derrick121K/Portfolio/tree/main/african-wood-house
-- **Purpose:** A luxury South African artisan-brand website concept with product showcases and enquiry-led shopping interactions.
-- **Status:** Demonstration content only; no live orders, payments or enquiry transmission.
+- **Purpose:** A luxury South African woodcraft storefront concept with product browsing, category filters, product details, wishlist, shopping bag, delivery choices and a multi-step simulated checkout.
+- **Status:** Demonstration content only. Orders and payments are simulated; forms do not transmit or store customer information.
 
 ## Project highlights
 
