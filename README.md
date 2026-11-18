@@ -45,6 +45,13 @@ Technology depth and frequency of use vary across projects. JSON, YAML, XML, TOM
 - **Technology:** HTML5, CSS3 and vanilla JavaScript.
 - **Purpose:** Student assignment and deadline planning, with task management, calendar, study-plan sharing, accessibility preferences and local JSON backup/restore.
 
+## African Wood House — Client Website Prototype
+
+- **Live preview:** https://derrick121k.github.io/Portfolio/african-wood-house/
+- **Source files:** https://github.com/Derrick121K/Portfolio/tree/main/african-wood-house
+- **Purpose:** A luxury South African artisan-brand website concept with product showcases and enquiry-led shopping interactions.
+- **Status:** Demonstration content only; no live orders, payments or enquiry transmission.
+
 ## Project highlights
 
 - Arletion — lead intelligence and business opportunity platform foundation.
